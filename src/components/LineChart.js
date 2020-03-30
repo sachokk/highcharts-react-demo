@@ -3,14 +3,21 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 
 
-const LineChart = () => {
+const LineChart = ({ title = 'default title',type = 'line', color = 'royalblue' }) => {
   const [hoverData, setHoverData] = useState(null);
   const [chartOptions, setChartOptions] = useState({
+    title: {
+      text: title
+    },
     xAxis: {
       categories: ['A', 'B', 'C'],
     },
     series: [
-      { data: [1, 2, 3] }
+      { 
+        type,
+        color,
+        data: [1, 2, 3]
+      }
     ],
     plotOptions: {
       series: {

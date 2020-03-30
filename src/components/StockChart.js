@@ -5,19 +5,24 @@ import HighchartsReact from 'highcharts-react-official'
 
 const getNumbersSequence = num => [ ...new Array(num)].map((_, i) => i + 1);
 
-const options = {
-  title: {
-    text: 'My stock chart'
-  },
-  series: [{
-    data: getNumbersSequence(150)
-  }]
+const StockChart = ({ title = 'default title', type = 'line', color = 'royalblue' }) => {
+  const options = {
+    title: {
+      text: title
+    },
+    series: [{
+      type,
+      color,
+      data: getNumbersSequence(30)
+    }]
+  }
+  
+  return (
+    <HighchartsReact
+    highcharts={Highcharts}
+    constructorType={'stockChart'}
+    options={options}
+    />)   
 }
-
-const StockChart = () => <HighchartsReact
-  highcharts={Highcharts}
-  constructorType={'stockChart'}
-  options={options}
-/>
 
 export default StockChart
