@@ -18,7 +18,7 @@ to see demo with multiple widgets or open http://localhost:3000/demo.html to vie
 `<iframe id="1" src="http://localhost:3000/stock?title=AAPL Stock Price&type=column&endpoint=http://localhost:3000/aapl-c.json"></iframe>`
 
 
-## You can use  url query params for configuration your widget: 
+### You can use  url query params for configuration your widget: 
 
 `http://localhost:3000/stock` - stock chart
 
@@ -33,12 +33,13 @@ to see demo with multiple widgets or open http://localhost:3000/demo.html to vie
 | color        | line color, works for stock chart      |
 | endpoint     | url for mocked data                    |
 
-# For stock charts:
+#### For stock charts:
 
 http://localhost:3000/aapl-c.json 
 
 
-# For line charts:
+#### For line charts:
 
 http://localhost:3000/temperature.json
+
 http://localhost:3000/solar.json
