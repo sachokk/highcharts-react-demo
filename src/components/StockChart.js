@@ -1,22 +1,32 @@
-import React from 'react'
+import React from 'react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
+import { useFetch } from '../hooks'
 
+const StockChart = ({
+  title = 'default title',
+  type = 'line',
+  color = 'royalblue',
+  endpoint
+}) => {
+  const {data, error, loading } = useFetch(endpoint);
+  
+  if (loading || error) {
+    return <h1>loading...</h1>
+  }
 
-const getNumbersSequence = num => [ ...new Array(num)].map((_, i) => i + 1);
-
-const StockChart = ({ title = 'default title', type = 'line', color = 'royalblue' }) => {
   const options = {
     title: {
       text: title
     },
     series: [{
       type,
+      name: 'stock price',
       color,
-      data: getNumbersSequence(30)
+      data
     }]
   }
-  
+
   return (
     <HighchartsReact
     highcharts={Highcharts}

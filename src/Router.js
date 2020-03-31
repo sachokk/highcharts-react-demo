@@ -1,23 +1,17 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-  useLocation
-} from "react-router-dom";
-import StockChart from './components/StockChart'
+import { Switch, Route } from "react-router-dom";
+import StockChart from './components/StockChart';
 import LineChart from './components/LineChart';
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import { useQueryParams } from './hooks';
 
 const Chart = () => {
-  const query = useQuery();
+  const { title, type, color, endpoint } = useQueryParams();
 
   const chartProps = {
-    title: query.get('title'),
-    type: query.get('type'),
-    color: query.get('color'),
+    title,
+    type,
+    color,
+    endpoint
   }
 
   return (

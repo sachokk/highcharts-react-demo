@@ -1,0 +1,32 @@
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .container>* {
+            display: flex;
+            margin: 2vw;
+            height: 40vh;
+            width: 45vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <iframe id="1"
+            src="http://localhost:3000/stock?title=AAPL Stock Price&type=column&endpoint=http://localhost:3000/aapl-c.json"></iframe>
+        <iframe id="2"
+            src="http://localhost:3000/stock?title=New Title&color=red&type=line&endpoint=http://localhost:3000/aapl-c.json"></iframe>
+        <iframe id="3"
+            src="http://localhost:3000/chart?title=Monthly Average Temperature&endpoint=http://localhost:3000/temperature.json"></iframe>
+        <iframe id="4"
+            src="http://localhost:3000/chart?title=Solar Employment Growth by Sector, 2010-2016&color=limegreen&endpoint=http://localhost:3000/solar.json"></iframe>
+    </div>
+</body>
+
+</html>
