@@ -26,10 +26,10 @@ to see demo with multiple widgets or open http://localhost:3000/demo.html to vie
 
 **Available params:**
 
-| key          |  description             |
+| key          |  description                           |
 | -------------| --------------------------------------:|
 | title        | chart top title                        |
-| type         | `line|column|bar` works for stock chart|
+| type         | line|column|bar works for stock chart  |
 | color        | line color, works for stock chart      |
 | endpoint     | url for mocked data                    |
 
